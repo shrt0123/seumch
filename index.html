@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="/static/icon/favicon.ico" type="image/x-icon" sizes="16x16">
+<title>세우는교회</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 400;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 700;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 300;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+.nanumbarungothic * {
+ font-family: 'NanumBarunGothic', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: 'NanumBarunGothic', sans-serif;
+}
+
+body, html {
+	height: 100%;
+	color: rgb(60, 60, 60);
+	line-height: 1.9;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* First image */
+.bgimg-1 {
+	background-image: url("/static/images/banner/CH_01.jpeg");
+	min-height: 850px;
+}
+
+/* Second image */
+.bgimg-2 {
+	background-image: url("/static/images/banner/b04.jpg");
+	min-height: 400px;
+}
+
+/* Third image */
+.bgimg-3 {
+	background-image: url("/static/images/banner/b03.jpg");
+	min-height: 400px;
+}
+
+/* Firth image */
+.bgimg-4 {
+	background-image: url("/static/images/banner/b05.jpg");
+	min-height: 400px;
+}
+
+.w3-wide {
+	letter-spacing: 4px;
+}
+
+.w3-hover-opacity {
+	cursor: pointer;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-width: 580px) {
+	.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+		background-attachment: scroll;
+		min-height: 400px;
+	}
+}
+
+.w3-theme-l5 {
+	color: #000 !important;
+	background-color: #fefefd !important
+}
+
+.w3-theme-l4 {
+	color: #000 !important;
+	background-color: #fcfbfa !important
+}
+
+.w3-theme-l3 {
+	color: #000 !important;
+	background-color: #f9f8f5 !important
+}
+
+.w3-theme-l2 {
+	color: #000 !important;
+	background-color: #f6f4ef !important
+}
+
+.w3-theme-l1 {
+	color: #000 !important;
+	background-color: #f3f1ea !important
+}
+
+.w3-theme-d1 {
+	color: #000 !important;
+	background-color: #dfd9c7 !important
+}
+
+.w3-theme-d2 {
+	color: #000 !important;
+	background-color: #cec4aa !important
+}
+
+.w3-theme-d3 {
+	color: #fff !important;
+	background-color: #bdb08c !important
+}
+
+.w3-theme-d4 {
+	color: #fff !important;
+	background-color: #ac9b6e !important
+}
+
+.w3-theme-d5 {
+	color: #fff !important;
+	background-color: #958456 !important
+}
+
+.w3-text-theme {
+	color: #00008B !important
+}
+</style>
+</head>
+<body>
+
+	<!-- Navbar (sit on top) -->
+	<div class="w3-top" style="background-color: rgba( 255, 255, 255, 0.6 );">
+		<div class="w3-bar" id="myNavbar">
+			<a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+				href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu"> 
+				<i class="fa fa-bars"></i></a> 
+			<a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
+			<a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-child"></i> 교회 소개</a> 
+			<a href="#calendar" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-calendar"></i> 교회 일정</a> 
+			<a href="#timetable" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-clock-o"></i> 예배 안내</a> 
+			<a href="#map" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-map"></i> 오시는 길</a>
+		</div>
+
+		<!-- Navbar on small screens -->
+		<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+			<a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">교회 소개</a> 
+			<a href="#calendar" class="w3-bar-item w3-button" onclick="toggleFunction()">교회 일정</a>
+			<a href="#timetable" class="w3-bar-item w3-button" onclick="toggleFunction()">예배 안내</a> 
+			<a href="#map" class="w3-bar-item w3-button" onclick="toggleFunction()">오시는 길</a>
+		</div>
+	</div>
+
+	<!-- First Parallax Image with Logo Text -->
+	<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+	<!-- 
+		<div class="w3-panel w3-display-bottomright w3-hide-small" style="white-space: nowrap;  background-color: rgba( 255, 255, 255, 0.6 ); width: 2000px; height: 250px; margin-bottom: 0px;">
+			<div class="w3-display-bottomright w3-margin-right w3-margin-bottom w3-hide-small" style="white-space: nowrap;">
+				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-text-theme">성경적인 전도운동</span>으로 세계복음화하는 교회</b><br>
+				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity">복음, 전도, 선교로 <span class="w3-text-theme">후대</span>살리는 교회</b><br>
+				<img src="/static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-padding-small w3-margin-top"
+				alt="세우는교회 로고" width="360" height="85">
+			</div>
+		</div>
+	 -->
+		
+		<div class="w3-panel w3-display-right w3-hide-small" style="white-space: nowrap; width: 2000px; height: 250px; margin-bottom: 0px;">
+			<div class="w3-display-bottomright w3-margin-right w3-margin-bottom w3-hide-small" style="white-space: nowrap;">
+				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity w3-margin-right"><span class="w3-text-theme">성경적인 전도운동</span>으로 세계복음화하는 교회</b><br>
+				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity w3-margin-right">복음, 전도, 선교로 <span class="w3-text-theme">후대</span>살리는 교회</b><br>
+			</div>
+		</div>
+		<div class="w3-panel w3-display-bottomright w3-hide-small" style="white-space: nowrap;">
+			<div class="w3-display-bottomright w3-margin-right w3-margin-bottom w3-hide-small" style="white-space: nowrap;">
+				<img src="/static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-padding-small w3-margin-right" alt="세우는교회 로고" width="460">
+			</div>
+		</div>
+		
+		<!-- small screens -->
+		<div class="w3-display-bottomright w3-hide-large w3-hide-medium" style="white-space: nowrap;">
+			<b class="w3-right w3-text-black w3-medium w3-wide w3-animate-opacity w3-margin-right"><span class="w3-text-theme">성경적인 전도운동</span>으로 세계복음화하는 교회</b><br>
+			<b class="w3-right w3-text-black w3-medium w3-wide w3-animate-opacity w3-margin-right">복음, 전도, 선교로 <span class="w3-text-theme">후대</span>살리는 교회</b><br>
+			<img src="/static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-margin-top w3-margin-bottom" alt="세우는교회 로고" width="250"> 
+		</div>
+	</div>
+
+	<!-- Container (About Section) -->
+	<div class="w3-content w3-container w3-padding-64" id="about">
+		<h1 class="w3-center w3-margin-top w3-padding">
+			<b>교회 소개</b>
+		</h1>
+		<br>
+		<div class="w3-row w3-border-top">
+			<br>
+			<h2 class="w3-center w3-margin"><b>담임목사</b></h2>
+			<div class="w3-col m6 w3-center w3-padding-small w3-margin-top">
+				<img src="/static/images/교역자/이구연목사님.jpg" class="w3-round w3-image"
+					alt="이구연 목사" width="100%">
+				<div class="w3-panel">
+					<p>
+						<i class="fa fa-quote-left w3-large w3-margin-bottom"></i><br> 
+						<i class="w3-large"> 주는 그리스도이시요 살아계신 하나님의 아들이십니다.<br>내가 이 반석위에 내 교회를 세우리니<br> - 마16:16~18 - </i><br>
+						<i class="fa fa-quote-right w3-large w3-margin-top"></i>
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m6 w3-padding-small">
+				<h6>
+					 &nbsp;&nbsp;세상에 많은 사람들이 참된 복음을 알지 못하고 영적문제에 시달리며 고통 받다가 실패하며 죽어가고 있습니다.
+					 그런데 교회는 율법주의, 신비주의, 인본주의와 종교생활로 복음의 능력을 상실하고 육신적인 교권에 사로잡혀 세상의 빛이 되지 못하고 있습니다. 
+					 이때에 하나님은 시대 살린 요셉처럼, 모세, 사무엘, 다윗, 엘리사, 이사야, 바울처럼 시대 살릴 일꾼과 교회를 부르고 계십니다.
+				</h6>
+				<h6>
+					&nbsp;&nbsp;하나님은 우리 <b>' 세우는교회 '</b> 를 세우셔서 지역과 서울, 수도권, 한국, 세계 살리는 교회로서의 사명과 소명을 주셨습니다. 
+					하나님은 이 일에 쓰임 받을 사역자들과 중직자, 렘넌트, 일꾼들을 붙이시사 현장 살릴 제자로, 세계 살릴 교회로 세우시길 원하고 계십니다. 
+				</h6>
+				<h6>
+					&nbsp;&nbsp;교회의 머리와 주인은 그리스도이시며, 우리는 그분의 지체인 동시에 청지기이며 종입니다. 
+					그분이 마음껏 쓰실 수 있는 성도와 교회가 되기 위해 말씀과 기도의 비밀을 누리며, 오직 전도와 선교에 방향 맞추어 나가길 원합니다. 
+					언약 잡은 후대를 키우며 복음증거의 한을 품고 주님만을 기쁘시게 해드리며 그분께 영광 돌리는 교회가 되기를 소원합니다.<br>
+				</h6>
+				<div class="w3-row" style="white-space: nowrap;">
+					<h5 class="w3-col m9"><b class="w3-right">세우는교회 당회장 이구연 목사</b></h5>  
+					<img src="/static/images/sign.jpg" class="w3-col m3 w3-hide-small">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="w3-content w3-container w3-padding-64 w3-border-top">
+		<h2 class="w3-center w3-padding-16"><b>섬기는 분들</b></h2>
+		<div class="w3-row">
+			<div class="w3-col m6 w3-center w3-padding-large">
+				<img src="/static/images/교역자/조영익부목사님.jpg" class="w3-round w3-image" alt="조영익 부목사" width="400"><br> 
+				<p>
+					<b><i class="fa fa-user w3-margin-right"></i>조영익 부목사</b><br>
+					<b><i class="fa fa-group w3-margin-right"></i>담당 사역 : 대학청년</b><br>
+					<b><i class="fa fa-phone w3-margin-right"></i>010-9180-4744</b>
+				</p>
+			</div>
+			<div class="w3-col m6 w3-center w3-padding-large">
+				<img src="/static/images/교역자/이은혜전도사님.jpg" class="w3-round w3-image" alt="이은혜 교구전도사" width="400"><br> 
+				<p>
+					<b><i class="fa fa-user w3-margin-right"></i>이은혜 교구전도사</b><br>
+					<b><i class="fa fa-group w3-margin-right"></i>담당 사역 : 태영아 (부모)</b><br>
+					<b><i class="fa fa-phone w3-margin-right"></i>010-5507-0948</b>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+    <div class="w3-row w3-center w3-padding-small w3-theme-d1">
+        <div class="w3-col m4 w3-section">
+            <img class="image w3-round" src="" style="width:420px; height: 310px;" alt="">
+        </div>
+        <div class="w3-col m4 w3-section w3-hide-small">
+            <img class="image w3-round" src="" style="width: 420px; height: 310px;" alt="">
+        </div>
+        <div class="w3-col m4 w3-section w3-hide-small">
+            <img class="image w3-round" src="" style="width: 420px; height: 310px;" alt="">
+        </div>
+	</div>
+
+	<div class="w3-content w3-container w3-padding-64">
+		<h2 class="w3-center w3-padding-16"><b>교구 안내</b></h2>
+		<div class="w3-row">
+			<div class="w3-col m3 w3-left w3-padding-large">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>1교구 (구로, 양천)</b></p>
+					</header>
+					<p>
+						<i class="fa fa-comments w3-margin-left w3-margin-right w3-margin-bottom"></i>사역자 : 이은혜 전도사<br>
+						<i class="fa fa-black-tie w3-margin-left w3-margin-right w3-margin-bottom"></i>구역장 : 박순덕 장로<br>
+						<i class="fa fa-clipboard w3-margin-left w3-margin-right w3-margin-bottom"></i>권찰 : 명현주 권사
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m3 w3-left w3-padding-large">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>2구역 (서울)</b></p>
+					</header>
+					<p>
+						<i class="fa fa-comments w3-margin-left w3-margin-right w3-margin-bottom"></i>사역자 : 이은혜 전도사<br>
+						<i class="fa fa-black-tie w3-margin-left w3-margin-right w3-margin-bottom"></i>구역장 : 백운순 권사<br>
+						<i class="fa fa-clipboard w3-margin-left w3-margin-right w3-margin-bottom"></i>권찰 : 이흥연 권사
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m3 w3-left w3-padding-large">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>3구역 (경기도)</b></p>
+					</header>
+					<p>
+						<i class="fa fa-comments w3-margin-left w3-margin-right w3-margin-bottom"></i>사역자 : 조영익 부목사<br>
+						<i class="fa fa-black-tie w3-margin-left w3-margin-right w3-margin-bottom"></i>구역장 : 조재희 권사<br>
+						<i class="fa fa-clipboard w3-margin-left w3-margin-right w3-margin-bottom"></i>권찰 : 이호영 집사
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m3 w3-left w3-padding-large">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>4구역 (그 외 지역, 해외)</b></p>
+					</header>
+					<p>
+						<i class="fa fa-comments w3-margin-left w3-margin-right w3-margin-bottom"></i>사역자 : 조영익 부목사<br>
+						<i class="fa fa-black-tie w3-margin-left w3-margin-right w3-margin-bottom"></i>구역장 : 백수영 권사<br>
+						<i class="fa fa-clipboard w3-margin-left w3-margin-right w3-margin-bottom"></i>권찰 : 박현숙 권사
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="w3-content w3-container w3-padding-64 w3-border-top">
+		<h2 class="w3-center w3-padding-16"><b>지교회 안내</b></h2>
+		<h3 class="w3-center w3-padding-16"><b><i class="fa fa-institution"></i> 국내지교회</b></h3>
+		<div class="w3-row">
+			<div class="w3-col m6 w3-left w3-padding-small">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>석모도지교회</b></p>
+					</header>
+					<img src="/static/images/지교회/석모도지교회.jpg" alt="Alps" style="max-width:100%; height:auto;">
+					<p>
+						<i class="fa fa-flag w3-margin-left w3-margin-right w3-margin-bottom"></i>지교회 담당자 : 이민숙 권사 (010-9391-5485)<br>
+						<i class="fa fa-handshake-o w3-margin-left w3-margin-right w3-margin-bottom"></i>두기고 (장로) : 박순덕 장로, 김익정 장로<br>
+						<i class="fa fa-map w3-margin-left w3-margin-right w3-margin-bottom"></i>주소 : 인천 강화군 삼산면 삼산북로 314, 좋은아침펜션
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m6 w3-left w3-padding-small">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>호남지교회</b></p>
+					</header>
+					<img src="/static/images/지교회/호남지교회.jpg" alt="Alps" style="max-width:100%; height:auto;">
+					<p>
+						<i class="fa fa-flag w3-margin-left w3-margin-right w3-margin-bottom"></i>지교회 담당자 : 백수영 권사 (010-5064-9568)<br>
+						<i class="fa fa-handshake-o w3-margin-left w3-margin-right w3-margin-bottom"></i>두기고 (장로) : 정세락 장로<br>
+						<i class="fa fa-map w3-margin-left w3-margin-right w3-margin-bottom"></i>주소 : 전북 김제시 두월로 239, 모아빌 2동 403호
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m6 w3-left w3-padding-small">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>제주도지교회</b></p>
+					</header>
+					<img src="/static/images/지교회/제주도지교회.jpg" alt="Alps" style="max-width:100%; height:auto;">
+					<p>
+						<i class="fa fa-flag w3-margin-left w3-margin-right w3-margin-bottom"></i>지교회 담당자 : 박현숙 권사 (010-3367-5802)<br>
+						<i class="fa fa-handshake-o w3-margin-left w3-margin-right w3-margin-bottom"></i>두기고 (장로) : 이희남 장로, 김상욱 장로<br>
+						<i class="fa fa-map w3-margin-left w3-margin-right w3-margin-bottom"></i>주소 : 제주 한림로 653 (한림리 1365-1) 2층, 제주비젼교회
+					</p>
+				</div>
+			</div>
+			<div class="w3-col m6 w3-left w3-padding-small">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>중부지교회</b></p>
+					</header>
+					<img src="/static/images/지교회/안성지교회.jpg" alt="Alps" style="max-width:100%; height:auto;">
+					<p>
+						<i class="fa fa-flag w3-margin-left w3-margin-right w3-margin-bottom"></i>지교회 담당자 : 배유영 집사 ()<br>
+						<i class="fa fa-handshake-o w3-margin-left w3-margin-right w3-margin-bottom"></i>두기고 (장로) : 이베드로 장로<br>
+						<i class="fa fa-map w3-margin-left w3-margin-right w3-margin-bottom"></i>주소 : 
+					</p>
+				</div>
+			</div>
+		</div>
+		<h3 class="w3-center w3-padding-16"><b><i class="fa fa-globe"></i> 해외지교회</b></h3>
+		<div class="w3-row">
+			<div class="w3-col m6 w3-left w3-padding-small">
+				<div class="w3-card w3-padding-8">
+					<header class="w3-container w3-center w3-theme-d3">
+						<p><b>TCK HOUSE</b></p>
+					</header>
+					<img src="/static/images/지교회/베트남지교회.jpg" alt="Alps" style="max-width:100%; height:auto;">
+					<p>
+						<i class="fa fa-flag w3-margin-left w3-margin-right w3-margin-bottom"></i>지교회 담당자 : 지태환 장로 (010-2852-1853)<br>
+						<i class="fa fa-handshake-o w3-margin-left w3-margin-right w3-margin-bottom"></i>두기고 (장로) : 이경희 장로<br>
+					</p>
+				</div>
+			</div>	
+		</div>
+	</div>
+	
+	<div class="bgimg-2 w3-display-container w3-opacity-min"></div>
+	
+	<!-- Container (Calendar Section) -->
+	<div class="w3-content w3-container w3-center w3-padding-64" id="calendar">
+		<h2><b>교회 일정</b></h2>
+		<div class="w3-hide-small w3-hide-medium">
+			<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FSeoul&title=%EC%84%B8%EC%9A%B0%EB%8A%94%EA%B5%90%ED%9A%8C&showNav=1&showPrint=0&showTabs=1&showCalendars=0&src=c2V1bWNoMTk5NEBnbWFpbC5jb20&color=%23E4C441" 
+			style="border-width:0" width="910" height="610" frameborder="0" scrolling="no"></iframe>
+		</div>
+		<div class="w3-hide-large">
+			<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FSeoul&title=%EC%84%B8%EC%9A%B0%EB%8A%94%EA%B5%90%ED%9A%8C&showNav=1&showPrint=0&showTabs=1&showCalendars=0&src=c2V1bWNoMTk5NEBnbWFpbC5jb20&color=%23E4C441" 
+			style="border: 0" width="550" height="450" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+	
+	<div class="bgimg-3 w3-display-container w3-opacity-min"></div>
+
+	<!-- Container (Timetable Section) -->
+	<div class="w3-content w3-container w3-padding-64" id="timetable">
+		<h2 class="w3-center"><b>예배 안내</b></h2>
+		<h6 class="w3-center w3-padding w3-margin-bottom">
+			<em> 모든 예배는 <b>유튜브로 생방송</b>되며, <br><b>계층별 유튜브 채널</b>은 해당 예배 옆 아이콘을 통해 확인하실 수 있습니다.
+			</em>
+		</h6>
+		<div class="w3-col m6 w3-center" style="padding-left: 4px; padding-right: 4px;">
+			<table class="w3-table w3-bordered w3-centered">
+				<tr class="w3-theme-d3">
+					<th>구분</th>
+					<th></th>
+					<th>시간</th>
+					<th>장소</th>
+				</tr>
+				<tr>
+					<td>주일 1부 청장년예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@seumch237"></a></th>
+					<td>오전 09:00</td>
+					<td>교회 본당</td>
+					</tr>
+				<tr>
+					<td>주일 2부 오전예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@seumch237"></a></th>
+					<td>오전 11:00</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>주일 3부 연합예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@seumch237"></a></th>
+					<td>오후 02:30</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>주일 자체전도학교</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@%EC%84%B8%EC%9A%B0%EB%8A%94%EA%B5%90%ED%9A%8C%EC%9E%90%EC%B2%B4%EC%A0%84%EB%8F%84%ED%95%99"></a></th>
+					<td>오후 04:00</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>주일 중직자대학원</td>
+					<td></td>
+					<td>오후 05:00</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>수요예배</td>
+					<td></td>
+					<td>(수) 오후 07:30</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>원네스 금요기도회</td>
+					<td></td>
+					<td>(금) 오후 08:30</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>새벽예배</td>
+					<td></td>
+					<td>월~금, 주일 오전 05:30</td>
+					<td>교회 본당</td>
+				</tr>
+			</table>
+		</div>
+		<div class="w3-col m6 w3-center" style="padding-left: 4px; padding-right: 4px;">
+			<table class="w3-table w3-bordered w3-centered">
+				<tr class="w3-hide-small w3-theme-d3">
+					<th>구분</th>
+					<th></th>
+					<th>시간</th>
+					<th>장소</th>
+				</tr>
+				<tr>
+					<td>주일 태영아예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@%EC%84%B8%EC%9A%B0%EB%8A%94%EA%B5%90%ED%9A%8C%ED%83%9C%EC%98%81%EC%95%84%EB%B6%80"></a></th>
+					<td>오후 01:30</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>주일 유치부예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href=""></a></th>
+					<td>오후 12:30</td>
+					<td>어린이실</td>
+				</tr>
+				<tr>
+					<td>주일 초등부예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href=""></a></th>
+					<td>오후 12:30</td>
+					<td>중고등부실</td>
+				</tr>
+				<tr>
+					<td>주일 중고등부예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@%EC%84%B8%EC%9A%B0%EB%8A%94%EA%B5%90%ED%9A%8C%EC%A4%91%EA%B3%A0%EB%93%B1%EB%B6%80"></a></th>
+					<td>오후 01:30</td>
+					<td>중고등부실</td>
+				</tr>
+				<tr>
+					<td>주일 산업선교예배</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href=""></a></th>
+					<td>오후 01:20</td>
+					<td>중고등부실</td>
+				</tr>
+				<tr>
+					<td>주일 구역공과</td>
+					<th><a style="text-decoration:none" class="fa fa-youtube-play w3-text-red" href="https://www.youtube.com/@%EC%84%B8%EC%9A%B0%EB%8A%94%EA%B5%90%ED%9A%8C%EC%9E%90%EC%B2%B4%EC%A0%84%EB%8F%84%ED%95%99"></a></th>
+					<td>오후 02:00</td>
+					<td>교회 본당</td>
+				</tr>
+				<tr>
+					<td>캠프전도학교</td>
+					<td></td>
+					<td>화요일 오전 11:00</td>
+					<td>교회 본당</td>
+				</tr>
+			</table>
+		</div>
+		<div class="w3-large w3-section w3-right">
+			<i class="fa fa-youtube-play w3-text-red"></i> 
+			<a href="https://www.youtube.com/@seumch237" title="YOUTUBE" target="_blank" class="w3-hover-text-red">
+			 '세우는교회' YOUTUBE</a>
+		</div>
+	</div>
+
+	<div class="bgimg-4 w3-display-container w3-opacity-min"></div>
+
+	<!-- Container (Map Section) -->
+	<div class="w3-content w3-container w3-padding-64" id="map" style="padding-left: 0px; padding-right: 0px;">
+		<h2 class="w3-center"><b>오시는 길</b></h2>
+		<h5 class="w3-center w3-margin-bottom">
+			<em>주님의 이름으로 환영합니다 :)</em>
+		</h5>
+		<div class="w3-col m6 w3-center">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.3226459955279!2d126.8630445284783!3d37.50106406220121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9d8f6927949f%3A0x74d6c6e09e0fb7ac!2z7IS47Jqw64qU6rWQ7ZqM!5e0!3m2!1sko!2skr!4v1688530987468!5m2!1sko!2skr"
+			width="500" height="500" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+		<div class="w3-col m6 w3-large" style="padding-left: 24px;">
+			<div class="w3-margin-bottom">
+				<i class="fa fa-map-marker fa-fw w3-xlarge w3-text-red"></i> 
+				<b> 주소</b> : 서울특별시 구로구 중앙로 34, 4층 <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				(지번) 고척1동 52-340, 풍원빌딩 4층 <br>
+			</div>
+			<div class="w3-margin-bottom">
+				<i class="fa fa-phone fa-fw w3-xlarge w3-text-green"></i> 
+				<b> 전화</b> : 02-2619-7881<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				(목사관) 070-8225-9134 <br> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<b> 팩스</b> : 02-2611-7882 <br>
+			</div>
+			<div class="w3-margin-bottom">
+				<i class="fa fa-envelope fa-fw w3-xlarge w3-text-blue-gray"></i> 
+				<b> 메일</b> : seumch@hanmail.net <br>
+			</div>
+			<div class="w3-margin-bottom">
+				<i class="fa fa-bus fa-fw w3-xlarge"></i> 
+				<b> 버스안내</b><br>
+				&nbsp; 
+				<i class="fa fa-caret-right fa-fw w3-large"></i> 
+				마을버스(개봉역 승차 - 청구아파트 앞 하차) <br> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				: 구로06 <br>
+				&nbsp; 
+				<i class="fa fa-caret-right fa-fw w3-large"></i> 
+				일반버스(고척중학교 앞 하차) <br> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				: 5712, 6515, 600, 6638<br> 
+				&nbsp; 
+				<i class="fa fa-caret-right fa-fw w3-large"></i>
+				일반버스(동양미래대학교 앞 하차 / 도보 7분) <br> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				: 6515, 5626, 5712,6513, 6637, 160, 260, 600, 660
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="w3-center w3-theme-d5 w3-padding-64 w3-opacity w3-hover-opacity-off">
+		<a href="#home" class="w3-button w3-light-grey">
+		<i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+			<div class="w3-center w3-padding-small">
+				<div class="w3-large w3-section">
+					<i class="fa fa-youtube-play"></i> 
+					<a href="https://www.youtube.com/@seumch237" title="YOUTUBE" target="_blank" class="w3-hover-text-red"> 
+					YOUTUBE</a> 
+					| 
+					<i class="fa fa-coffee"></i> 
+					<a href="https://cafe.daum.net/seumch" title="DAUM CAFE" target="_blank" class="w3-hover-text-green"> 
+					DAUM CAFE</a>
+				</div>
+				<p>
+					Copyright© 2024 SEUM CHURCH All Rights Reserved. 
+					<br>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a>
+				</p>
+			</div>
+	</footer>
+
+	<script>
+	
+		// Random images
+		const images = [ 
+			'p01.jpg', 'p02.jpg', 'p03.jpg', 'p04.jpg', 'p05.jpg', 'p06.jpg',
+			'p07.jpg', 'p08.jpg', 'p09.jpg', 'p10.jpg', 'p11.jpg', 'p12.jpg',
+			'p13.jpg', 'p14.jpg', 'p15.jpg', 'p16.jpg', 'p17.jpg', 'p18.jpg',
+			'p19.jpg', 'p20.jpg', 'p21.jpg', 'p22.jpg', 'p23.jpg', 'p24.jpg',
+			'p25.jpg', 'p26.jpg', 'p27.jpg', 'p28.jpg', 'p29.jpg', 'p30.jpg',
+			'p31.jpg', 'p32.jpg', 'p33.jpg', 'p34.jpg', 'p35.jpg', 'p36.jpg',
+			'p37.jpg', 'p38.jpg', 'p39.jpg', 'p40.jpg' ];
+		
+		function getRandomImage() {
+            const chosenImage = images[Math.floor(Math.random() * images.length)];
+            return `/static/images/panel/${chosenImage}`;
+        }
+
+        function applyRandomImage() {
+            const imageElements = document.querySelectorAll(".image");
+            imageElements.forEach(imageElement => {
+                imageElement.src = getRandomImage();
+            });
+        }
+
+        const intervalTime = 15000;
+
+        window.onload = function() {
+            applyRandomImage();
+            setInterval(applyRandomImage, intervalTime);
+        };
+
+		// Change style of navbar on scroll
+		window.onscroll = function() {
+			myFunction()
+		};
+
+		function myFunction() {
+			var navbar = document.getElementById("myNavbar");
+			if (document.body.scrollTop > 100
+					|| document.documentElement.scrollTop > 100) {
+				navbar.className = "w3-bar" + " w3-card" + " w3-animate-top"
+						+ " w3-white";
+			} else {
+				navbar.className = navbar.className.replace(
+						" w3-card w3-animate-top w3-white", "");
+			}
+		}
+
+		// Used to toggle the menu on small screens when clicking on the menu button
+		function toggleFunction() {
+			var x = document.getElementById("navDemo");
+			if (x.className.indexOf("w3-show") == -1) {
+				x.className += " w3-show";
+			} else {
+				x.className = x.className.replace(" w3-show", "");
+			}
+		}
+	</script>
+</body>
+</html>
