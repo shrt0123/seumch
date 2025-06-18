@@ -174,18 +174,7 @@ body, html {
 	</div>
 
 	<!-- First Parallax Image with Logo Text -->
-	<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-	<!-- 
-		<div class="w3-panel w3-display-bottomright w3-hide-small" style="white-space: nowrap;  background-color: rgba( 255, 255, 255, 0.6 ); width: 2000px; height: 250px; margin-bottom: 0px;">
-			<div class="w3-display-bottomright w3-margin-right w3-margin-bottom w3-hide-small" style="white-space: nowrap;">
-				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-text-theme">성경적인 전도운동</span>으로 세계복음화하는 교회</b><br>
-				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity">복음, 전도, 선교로 <span class="w3-text-theme">후대</span>살리는 교회</b><br>
-				<img src="/static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-padding-small w3-margin-top"
-				alt="세우는교회 로고" width="360" height="85">
-			</div>
-		</div>
-	 -->
-		
+	<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">	
 		<div class="w3-panel w3-display-right w3-hide-small" style="white-space: nowrap; width: 2000px; height: 250px; margin-bottom: 0px;">
 			<div class="w3-display-bottomright w3-margin-right w3-margin-bottom w3-hide-small" style="white-space: nowrap;">
 				<b class="w3-right w3-text-black w3-xlarge w3-wide w3-animate-opacity w3-margin-right"><span class="w3-text-theme">성경적인 전도운동</span>으로 세계복음화하는 교회</b><br>
@@ -194,7 +183,7 @@ body, html {
 		</div>
 		<div class="w3-panel w3-display-bottomright w3-hide-small" style="white-space: nowrap;">
 			<div class="w3-display-bottomright w3-margin-right w3-margin-bottom w3-hide-small" style="white-space: nowrap;">
-				<img src="/static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-padding-small w3-margin-right" alt="세우는교회 로고" width="460">
+				<img src="static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-padding-small w3-margin-right" alt="세우는교회 로고" width="460">
 			</div>
 		</div>
 		
@@ -202,7 +191,7 @@ body, html {
 		<div class="w3-display-bottomright w3-hide-large w3-hide-medium" style="white-space: nowrap;">
 			<b class="w3-right w3-text-black w3-medium w3-wide w3-animate-opacity w3-margin-right"><span class="w3-text-theme">성경적인 전도운동</span>으로 세계복음화하는 교회</b><br>
 			<b class="w3-right w3-text-black w3-medium w3-wide w3-animate-opacity w3-margin-right">복음, 전도, 선교로 <span class="w3-text-theme">후대</span>살리는 교회</b><br>
-			<img src="/static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-margin-top w3-margin-bottom" alt="세우는교회 로고" width="250"> 
+			<img src="static/images/logo/seum_logo-1-2.png" class="w3-right w3-container w3-margin-top w3-margin-bottom" alt="세우는교회 로고" width="250"> 
 		</div>
 	</div>
 
@@ -640,7 +629,7 @@ body, html {
 		
 		function getRandomImage() {
             const chosenImage = images[Math.floor(Math.random() * images.length)];
-            return `/static/images/panel/${chosenImage}`;
+            return `static/images/panel/${chosenImage}`;
         }
 
         function applyRandomImage() {
